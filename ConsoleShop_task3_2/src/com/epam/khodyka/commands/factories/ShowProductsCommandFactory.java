@@ -5,12 +5,7 @@ import java.util.List;
 import com.epam.khodyka.commands.Command;
 import com.epam.khodyka.commands.implementation.ShowProductsCommand;
 import com.epam.khodyka.service.StorageService;
-/**
- * /* Copy with no changes from {ConsoleShop} /
- * 
- * @author Andrii_Khodyka
- *
- */
+
 public class ShowProductsCommandFactory implements AbstractFactory {
 
 	private StorageService storageService;

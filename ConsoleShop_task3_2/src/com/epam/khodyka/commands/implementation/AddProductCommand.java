@@ -10,12 +10,7 @@ import com.epam.khodyka.service.AdvertisingService;
 import com.epam.khodyka.service.BasketService;
 import com.epam.khodyka.service.StorageService;
 import com.epam.khodyka.view.ViewName;
-/**
- * /* Copy with no changes from {ConsoleShop} /
- * 
- * @author Andrii_Khodyka
- *
- */
+
 public class AddProductCommand extends Command {
 
 	private BasketService basketService;

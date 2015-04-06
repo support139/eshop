@@ -8,12 +8,7 @@ import com.epam.khodyka.commands.implementation.NoCommand;
 import com.epam.khodyka.commands.implementation.ShowOrderCommand;
 import com.epam.khodyka.service.OrderService;
 import com.epam.khodyka.utils.DateFormatter;
-/**
- * /* Copy with no changes from {ConsoleShop} /
- * 
- * @author Andrii_Khodyka
- *
- */
+
 public class ShowOrderCommandFactory implements AbstractFactory {
 
 	private OrderService orderService;

@@ -1,5 +1,6 @@
 package com.epam.khodyka.builders;
 
+import com.epam.khodyka.builders.reflection.ReflectionBuilder;
 import com.epam.khodyka.dataDispatcher.ConsoleDataDispatcher;
 import com.epam.khodyka.dataDispatcher.DataDispatcher;
 import com.epam.khodyka.dataDispatcher.RandomDataDispatcher;
@@ -34,8 +35,7 @@ public class BuilderFactory {
 		} else if (builderType.equalsIgnoreCase("random")) {
 			dispatcher = new RandomDataDispatcher();
 		}
-		runner.addBuilder(new GuitarBuilder(dispatcher));
-		runner.addBuilder(new ViolinBuilder(dispatcher));
+		runner.addBuilder(new ReflectionBuilder(dispatcher));
 		return true;
 	}
 

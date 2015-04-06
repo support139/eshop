@@ -13,4 +13,5 @@ public class ViewName {
 	public static final String ERROR_VIEW = "ErrorView";
 	public static final String SUCCESSFUL_CREATE_PRODUCT_VIEW = "SuccessfulCreateView";
 	public static final String SUCCESSFUL_CREATE_BUILDER_VIEW = "SuccessfulChoosenBuilderView";
+	public static final String SUCCESSFUL_CHANGED_LOCALE_VIEW = "SuccessfulChangedLocaleView";
 }

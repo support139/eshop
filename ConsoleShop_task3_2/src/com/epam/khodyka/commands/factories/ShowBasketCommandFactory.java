@@ -5,12 +5,7 @@ import java.util.List;
 import com.epam.khodyka.commands.Command;
 import com.epam.khodyka.commands.implementation.ShowBasketCommand;
 import com.epam.khodyka.service.BasketService;
-/**
- * /* Copy with no changes from {ConsoleShop} /
- * 
- * @author Andrii_Khodyka
- *
- */
+
 public class ShowBasketCommandFactory implements AbstractFactory {
 
 	private BasketService basketService;

@@ -6,12 +6,6 @@ import com.epam.khodyka.commands.Command;
 import com.epam.khodyka.commands.implementation.BuyAllCommand;
 import com.epam.khodyka.service.BasketService;
 
-/**
- * /* Copy with no changes from {ConsoleShop} /
- * 
- * @author Andrii_Khodyka
- *
- */
 public class BuyAllCommandFactory implements AbstractFactory {
 
 	private BasketService basketService;

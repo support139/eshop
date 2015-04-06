@@ -5,12 +5,7 @@ import java.util.Map;
 
 import com.epam.khodyka.db.entity.Guitar;
 import com.epam.khodyka.db.entity.MusicalInstrument;
-/**
- * /* Copy with no changes from {ConsoleShop} /
- * 
- * @author Andrii_Khodyka
- *
- */
+
 public class StorageRepository {
 
 	private Map<Long, MusicalInstrument> storage;

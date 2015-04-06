@@ -1,11 +1,15 @@
 package com.epam.khodyka.db.entity;
 
+import com.epam.khodyka.builders.anno.Setter;
+import com.epam.khodyka.builders.anno.Product;
+
 /**
  * Class Guitar represents Guitar entity
  * 
  * @author Andrii_Khodyka
  *
  */
+@Product
 public class Guitar extends StringInstruments {
 
 	private static final long serialVersionUID = -5465041510729569491L;
@@ -27,6 +31,7 @@ public class Guitar extends StringInstruments {
 		return woodType;
 	}
 
+	@Setter(name = "wood_type")
 	public void setWoodType(String woodType) {
 		this.woodType = woodType;
 	}
@@ -35,6 +40,7 @@ public class Guitar extends StringInstruments {
 		return fretsNum;
 	}
 
+	@Setter(name = "frets_num")
 	public void setFretsNum(int fretsNum) {
 		this.fretsNum = fretsNum;
 	}

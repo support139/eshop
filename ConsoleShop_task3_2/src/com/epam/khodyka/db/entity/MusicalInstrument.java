@@ -2,6 +2,10 @@ package com.epam.khodyka.db.entity;
 
 import java.io.Serializable;
 
+import com.epam.khodyka.builders.anno.Setter;
+import com.epam.khodyka.builders.anno.Product;
+
+@Product
 public abstract class MusicalInstrument implements Serializable {
 
 	private static final long serialVersionUID = 2229720364359653928L;
@@ -23,6 +27,7 @@ public abstract class MusicalInstrument implements Serializable {
 		return id;
 	}
 
+	@Setter(name = "product_id")
 	public void setId(long id) {
 		this.id = id;
 	}
@@ -31,6 +36,7 @@ public abstract class MusicalInstrument implements Serializable {
 		return name;
 	}
 
+	@Setter(name = "product_name")
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -39,6 +45,7 @@ public abstract class MusicalInstrument implements Serializable {
 		return price;
 	}
 
+	@Setter(name = "product_price")
 	public void setPrice(double price) {
 		this.price = price;
 	}

@@ -12,5 +12,6 @@ public class CommandName {
 	public static final String SHOW_NEXT_ORDER_COMMAND = "snord";
 	public static final String CREATE_NEW_PRODUCT_COMMAND = "create";
 	public static final String CREATE_NEW_PRODUCT_BUILDER = "cbuild";
+	public static final String CHANGE_LOCALE_COMMAND = "clocal";
 	
 }

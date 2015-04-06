@@ -6,12 +6,7 @@ import java.util.Map;
 import com.epam.khodyka.db.BasketRepository;
 import com.epam.khodyka.db.StorageRepository;
 import com.epam.khodyka.db.entity.MusicalInstrument;
-/**
- * /* Copy with no changes from {ConsoleShop} /
- * 
- * @author Andrii_Khodyka
- *
- */
+
 public class BasketService {
 
 	private BasketRepository basketRepository;

@@ -6,12 +6,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 import com.epam.khodyka.db.bean.OrderBean;
-/**
- * /* Copy with no changes from {ConsoleShop} /
- * 
- * @author Andrii_Khodyka
- *
- */
+
 public class OrderRepository {
 	private Map<Date, OrderBean> orders = new TreeMap<>();
 

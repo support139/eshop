@@ -16,12 +16,13 @@ public class ServiceManager {
 	private OrderService orderService;
 	private StorageService storageService;
 	private AdvertisingService advertisingService;
+	private ResourceBundleService bundleService;
 
 	public ServiceManager() {
 		basketRepository = new BasketRepository();
 		storageRepository = new StorageRepository();
-//		TODO Uncomment to init default data
-//		storageRepository.initDefaultData();
+		// TODO Uncomment to init default data
+		// storageRepository.initDefaultData();
 		orderRepository = new OrderRepository();
 		advertisingRepository = new AdvertisingRepository();
 
@@ -31,6 +32,7 @@ public class ServiceManager {
 		storageService = new StorageService(storageRepository);
 		advertisingService = new AdvertisingService(advertisingRepository,
 				storageRepository);
+		bundleService = new ResourceBundleService();
 	}
 
 	public BasketService getBasketService() {
@@ -47,6 +49,10 @@ public class ServiceManager {
 
 	public AdvertisingService getAdvertisingService() {
 		return advertisingService;
+	}
+
+	public ResourceBundleService getResourceBundleService() {
+		return bundleService;
 	}
 
 }

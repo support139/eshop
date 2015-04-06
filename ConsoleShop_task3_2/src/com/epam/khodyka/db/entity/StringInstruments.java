@@ -1,5 +1,9 @@
 package com.epam.khodyka.db.entity;
 
+import com.epam.khodyka.builders.anno.Setter;
+import com.epam.khodyka.builders.anno.Product;
+
+@Product
 public class StringInstruments extends MusicalInstrument {
 
 	private static final long serialVersionUID = 4071829669382349117L;
@@ -19,6 +23,7 @@ public class StringInstruments extends MusicalInstrument {
 		return stringType;
 	}
 
+	@Setter(name = "string_type")
 	public void setStringType(String stringType) {
 		this.stringType = stringType;
 	}

@@ -7,12 +7,7 @@ import com.epam.khodyka.db.entity.MusicalInstrument;
 import com.epam.khodyka.model.Model;
 import com.epam.khodyka.service.BasketService;
 import com.epam.khodyka.view.ViewName;
-/**
- * /* Copy with no changes from {ConsoleShop} /
- * 
- * @author Andrii_Khodyka
- *
- */
+
 public class ShowBasketCommand extends Command {
 
 	private BasketService basketService;

@@ -6,12 +6,7 @@ import java.util.Map;
 import com.epam.khodyka.db.bean.OrderBean;
 import com.epam.khodyka.model.Model;
 import com.epam.khodyka.view.View;
-/**
- * /* Copy with no changes from {ConsoleShop} /
- * 
- * @author Andrii_Khodyka
- *
- */
+
 public class ShowOrderView implements View {
 	@SuppressWarnings("unchecked")
 	@Override

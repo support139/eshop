@@ -1,5 +1,6 @@
 package com.epam.khodyka.builders;
 
+import com.epam.khodyka.builders.reflection.exception.InstrumentCreatorException;
 import com.epam.khodyka.db.entity.MusicalInstrument;
 
 public class BuildRunner {
@@ -14,7 +15,7 @@ public class BuildRunner {
 		}
 	}
 
-	public MusicalInstrument run(String productName) {
+	public MusicalInstrument run(String productName) throws InstrumentCreatorException {
 		return builder.create(productName);
 	}
 }

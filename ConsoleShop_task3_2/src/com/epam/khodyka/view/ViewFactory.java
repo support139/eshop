@@ -12,12 +12,13 @@ import com.epam.khodyka.view.implementation.ShowOrderView;
 import com.epam.khodyka.view.implementation.ShowProductView;
 import com.epam.khodyka.view.implementation.ShowTotalView;
 import com.epam.khodyka.view.implementation.SuccessfulAddedView;
+import com.epam.khodyka.view.implementation.SuccessfulChangedLocaleView;
 import com.epam.khodyka.view.implementation.SuccessfulCreateBuilderView;
 import com.epam.khodyka.view.implementation.SuccessfulCreateProductView;
 import com.epam.khodyka.view.implementation.SuccessfulOrderView;
 
 public class ViewFactory {
-	
+
 	private static ViewFactory factory;
 	private static Map<String, View> views = new HashMap<>();
 
@@ -31,8 +32,12 @@ public class ViewFactory {
 		views.put(ViewName.SUCCESSFUL_ORDER_VIEW, new SuccessfulOrderView());
 		views.put(ViewName.SHOW_ORDER_VIEW, new ShowOrderView());
 		views.put(ViewName.ERROR_VIEW, new ErrorPageView());
-		views.put(ViewName.SUCCESSFUL_CREATE_PRODUCT_VIEW, new SuccessfulCreateProductView());
-		views.put(ViewName.SUCCESSFUL_CREATE_BUILDER_VIEW, new SuccessfulCreateBuilderView());
+		views.put(ViewName.SUCCESSFUL_CREATE_PRODUCT_VIEW,
+				new SuccessfulCreateProductView());
+		views.put(ViewName.SUCCESSFUL_CREATE_BUILDER_VIEW,
+				new SuccessfulCreateBuilderView());
+		views.put(ViewName.SUCCESSFUL_CHANGED_LOCALE_VIEW,
+				new SuccessfulChangedLocaleView());
 	}
 
 	private ViewFactory() {

@@ -1,5 +1,7 @@
 package com.epam.khodyka.db.entity;
 
+import com.epam.khodyka.builders.anno.Setter;
+
 public class Violin extends StringInstruments {
 
 	private static final long serialVersionUID = 6181175491075989307L;
@@ -15,13 +17,13 @@ public class Violin extends StringInstruments {
 	}
 
 	public Violin() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public String getWoodType() {
 		return woodType;
 	}
 
+	@Setter(name = "wood_type")
 	public void setWoodType(String woodType) {
 		this.woodType = woodType;
 	}
@@ -30,6 +32,7 @@ public class Violin extends StringInstruments {
 		return scaleLenght;
 	}
 
+	@Setter(name = "scale_length")
 	public void setScaleLenght(double scaleLenght) {
 		this.scaleLenght = scaleLenght;
 	}

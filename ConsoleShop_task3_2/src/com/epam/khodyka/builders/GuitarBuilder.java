@@ -1,5 +1,6 @@
 package com.epam.khodyka.builders;
 
+import com.epam.khodyka.builders.reflection.exception.InstrumentCreatorException;
 import com.epam.khodyka.dataDispatcher.DataDispatcher;
 import com.epam.khodyka.db.entity.Guitar;
 import com.epam.khodyka.db.entity.MusicalInstrument;
@@ -11,7 +12,8 @@ public class GuitarBuilder extends MusicalInstrumentBuilder {
 	}
 
 	@Override
-	MusicalInstrument create(String productName) {
+	public MusicalInstrument create(String productName)
+			throws InstrumentCreatorException {
 		if (productName.equals("Guitar")) {
 			Guitar guitar = (Guitar) super.create(productName);
 			guitar.setFretsNum(dispatcher.getIntData("Enter fretsNum: "));

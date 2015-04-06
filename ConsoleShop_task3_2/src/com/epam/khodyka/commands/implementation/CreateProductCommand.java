@@ -2,6 +2,7 @@ package com.epam.khodyka.commands.implementation;
 
 import com.epam.khodyka.builders.BuildRunner;
 import com.epam.khodyka.builders.BuilderFactory;
+import com.epam.khodyka.builders.reflection.exception.InstrumentCreatorException;
 import com.epam.khodyka.commands.Command;
 import com.epam.khodyka.db.entity.MusicalInstrument;
 import com.epam.khodyka.model.Model;
@@ -26,7 +27,13 @@ public class CreateProductCommand extends Command {
 			model.put("errorMessage", "Choose builder type first!");
 			return ViewName.ERROR_VIEW;
 		}
-		MusicalInstrument instrument = runner.run(productName);
+		MusicalInstrument instrument;
+		try {
+			instrument = runner.run(productName);
+		} catch (InstrumentCreatorException e) {
+			model.put("errorMessage", "Exception " + e);
+			return ViewName.ERROR_VIEW;
+		}
 		if (!storageService.addProduct(instrument)) {
 			model.put("errorMessage", "Product with that id already in use!");
 			return ViewName.ERROR_VIEW;

@@ -8,12 +8,6 @@ import com.epam.khodyka.service.AdvertisingService;
 import com.epam.khodyka.service.BasketService;
 import com.epam.khodyka.service.StorageService;
 
-/**
- * /* Copy with no changes from {ConsoleShop} /
- * 
- * @author Andrii_Khodyka
- *
- */
 public class AddProductCommandFactory implements AbstractFactory {
 
 	private BasketService basketService;

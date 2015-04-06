@@ -8,6 +8,7 @@ import java.util.Map;
 import com.epam.khodyka.commands.factories.AbstractFactory;
 import com.epam.khodyka.commands.factories.AddProductCommandFactory;
 import com.epam.khodyka.commands.factories.BuyAllCommandFactory;
+import com.epam.khodyka.commands.factories.ChangeLocaleCommandFactory;
 import com.epam.khodyka.commands.factories.CreateProductBuilderCommandFactory;
 import com.epam.khodyka.commands.factories.CreateProductCommandFactory;
 import com.epam.khodyka.commands.factories.MakeOrderCommandFactory;
@@ -58,6 +59,10 @@ public class CommandFactory {
 						.getStorageService()));
 		commands.put(CommandName.CREATE_NEW_PRODUCT_BUILDER,
 				new CreateProductBuilderCommandFactory());
+		commands.put(
+				CommandName.CHANGE_LOCALE_COMMAND,
+				new ChangeLocaleCommandFactory(this.manager
+						.getResourceBundleService()));
 	}
 
 	public static CommandFactory getInstance(ServiceManager manager) {

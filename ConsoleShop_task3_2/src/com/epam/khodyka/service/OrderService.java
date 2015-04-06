@@ -10,12 +10,7 @@ import com.epam.khodyka.db.OrderRepository;
 import com.epam.khodyka.db.StorageRepository;
 import com.epam.khodyka.db.bean.OrderBean;
 import com.epam.khodyka.db.entity.MusicalInstrument;
-/**
- * /* Copy with no changes from {ConsoleShop} /
- * 
- * @author Andrii_Khodyka
- *
- */
+
 public class OrderService {
 
 	private BasketRepository basketRepository;

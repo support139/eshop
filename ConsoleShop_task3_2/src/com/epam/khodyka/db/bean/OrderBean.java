@@ -4,12 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.epam.khodyka.db.entity.MusicalInstrument;
-/**
- * /* Copy with no changes from {ConsoleShop} /
- * 
- * @author Andrii_Khodyka
- *
- */
+
 public class OrderBean {
 	private List<MusicalInstrument> instruments;
 

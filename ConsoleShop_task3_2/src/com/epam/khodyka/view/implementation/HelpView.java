@@ -2,12 +2,7 @@ package com.epam.khodyka.view.implementation;
 
 import com.epam.khodyka.model.Model;
 import com.epam.khodyka.view.View;
-/**
- * /* Copy with no changes from {ConsoleShop} /
- * 
- * @author Andrii_Khodyka
- *
- */
+
 public class HelpView implements View {
 
 	private static final String HELP_MESSAGE_SPROD = "sprod - show all products";

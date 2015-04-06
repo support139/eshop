@@ -5,12 +5,7 @@ import java.util.List;
 import com.epam.khodyka.db.entity.MusicalInstrument;
 import com.epam.khodyka.model.Model;
 import com.epam.khodyka.view.View;
-/**
- * /* Copy with no changes from {ConsoleShop} /
- * 
- * @author Andrii_Khodyka
- *
- */
+
 public class ShowAdvertisingView implements View {
 	@SuppressWarnings("unchecked")
 	@Override

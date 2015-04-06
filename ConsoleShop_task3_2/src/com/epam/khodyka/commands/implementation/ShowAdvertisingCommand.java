@@ -7,12 +7,7 @@ import com.epam.khodyka.db.entity.MusicalInstrument;
 import com.epam.khodyka.model.Model;
 import com.epam.khodyka.service.AdvertisingService;
 import com.epam.khodyka.view.ViewName;
-/**
- * /* Copy with no changes from {ConsoleShop} /
- * 
- * @author Andrii_Khodyka
- *
- */
+
 public class ShowAdvertisingCommand extends Command {
 
 	private AdvertisingService advertisingService;

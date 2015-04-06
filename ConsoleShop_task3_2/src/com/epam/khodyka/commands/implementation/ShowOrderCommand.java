@@ -8,12 +8,7 @@ import com.epam.khodyka.db.bean.OrderBean;
 import com.epam.khodyka.model.Model;
 import com.epam.khodyka.service.OrderService;
 import com.epam.khodyka.view.ViewName;
-/**
- * /* Copy with no changes from {ConsoleShop} /
- * 
- * @author Andrii_Khodyka
- *
- */
+
 public class ShowOrderCommand extends Command {
 
 	private OrderService orderService;

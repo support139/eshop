@@ -3,12 +3,7 @@ package com.epam.khodyka.commands;
 import java.util.List;
 
 import com.epam.khodyka.model.Model;
-/**
- * /* Copy with no changes from {ConsoleShop} /
- * 
- * @author Andrii_Khodyka
- *
- */
+
 public abstract class Command {
 
 	private List<String> args;
