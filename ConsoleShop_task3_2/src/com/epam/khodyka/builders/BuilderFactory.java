@@ -1,9 +1,9 @@
 package com.epam.khodyka.builders;
 
 import com.epam.khodyka.builders.reflection.ReflectionBuilder;
-import com.epam.khodyka.dataDispatcher.ConsoleDataDispatcher;
-import com.epam.khodyka.dataDispatcher.DataDispatcher;
-import com.epam.khodyka.dataDispatcher.RandomDataDispatcher;
+import com.epam.khodyka.datadispatcher.ConsoleDataDispatcher;
+import com.epam.khodyka.datadispatcher.DataDispatcher;
+import com.epam.khodyka.datadispatcher.RandomDataDispatcher;
 
 public class BuilderFactory {
 

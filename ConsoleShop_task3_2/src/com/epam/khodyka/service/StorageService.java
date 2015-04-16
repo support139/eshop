@@ -30,6 +30,10 @@ public class StorageService {
 		return storageRepository.getProduct(productId);
 	}
 
+	public int getProductCount() {
+		return storageRepository.getAllProducts().size();
+	}
+
 	public void save() {
 		try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(
 				new FileOutputStream("Storage.ser"))) {

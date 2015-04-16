@@ -3,9 +3,10 @@ package com.epam.khodyka.commands.factories;
 import java.util.Date;
 import java.util.List;
 
+import com.epam.khodyka.commands.AbstractFactory;
 import com.epam.khodyka.commands.Command;
-import com.epam.khodyka.commands.implementation.MakeOrderCommand;
-import com.epam.khodyka.commands.implementation.NoCommand;
+import com.epam.khodyka.commands.impl.MakeOrderCommand;
+import com.epam.khodyka.commands.impl.NoCommand;
 import com.epam.khodyka.service.OrderService;
 import com.epam.khodyka.utils.DateFormatter;
 

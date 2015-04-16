@@ -13,5 +13,11 @@ public class CommandName {
 	public static final String CREATE_NEW_PRODUCT_COMMAND = "create";
 	public static final String CREATE_NEW_PRODUCT_BUILDER = "cbuild";
 	public static final String CHANGE_LOCALE_COMMAND = "clocal";
-	
+	// TCP
+	public static final String GET_COUNT_TCPCOMMAND = "gcount";
+	public static final String GET_PRODUCT_TCPCOMMAND = "gprod";
+	// HTTP
+	public static final String GET_COUNT_HTTPCOMMAND = "count";
+	public static final String GET_PRODUCT_HTTPCOMMAND = "item";
+
 }

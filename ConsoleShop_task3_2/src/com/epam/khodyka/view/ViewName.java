@@ -14,4 +14,11 @@ public class ViewName {
 	public static final String SUCCESSFUL_CREATE_PRODUCT_VIEW = "SuccessfulCreateView";
 	public static final String SUCCESSFUL_CREATE_BUILDER_VIEW = "SuccessfulChoosenBuilderView";
 	public static final String SUCCESSFUL_CHANGED_LOCALE_VIEW = "SuccessfulChangedLocaleView";
+	// TCP
+	public static final String GET_COUNT_TCP_VIEW = "GetCountTcpView";
+	public static final String SHOW_PRODUCT_TCP_VIEW = "ShowProductTcpView";
+	// HTTP
+	public static final String GET_COUNT_HTTP_VIEW = "GetCountHttpView";
+	public static final String SHOW_PRODUCT_HTTP_VIEW = "ShowProductHttpView";
+	public static final String ERROR_REMOTE_VIEW = "ErrorView";
 }

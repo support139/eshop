@@ -2,8 +2,9 @@ package com.epam.khodyka.commands.factories;
 
 import java.util.List;
 
+import com.epam.khodyka.commands.AbstractFactory;
 import com.epam.khodyka.commands.Command;
-import com.epam.khodyka.commands.implementation.ShowProductsCommand;
+import com.epam.khodyka.commands.impl.ShowProductsCommand;
 import com.epam.khodyka.service.StorageService;
 
 public class ShowProductsCommandFactory implements AbstractFactory {

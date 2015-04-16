@@ -7,7 +7,7 @@ import java.util.ResourceBundle;
 import com.epam.khodyka.builders.MusicalInstrumentBuilder;
 import com.epam.khodyka.builders.anno.Setter;
 import com.epam.khodyka.builders.reflection.exception.InstrumentCreatorException;
-import com.epam.khodyka.dataDispatcher.DataDispatcher;
+import com.epam.khodyka.datadispatcher.DataDispatcher;
 import com.epam.khodyka.db.entity.MusicalInstrument;
 import com.epam.khodyka.service.ResourceBundleService;
 

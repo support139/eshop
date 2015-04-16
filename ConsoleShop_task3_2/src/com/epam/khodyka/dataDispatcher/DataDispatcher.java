@@ -1,4 +1,4 @@
-package com.epam.khodyka.dataDispatcher;
+package com.epam.khodyka.datadispatcher;
 
 public interface DataDispatcher {
 	

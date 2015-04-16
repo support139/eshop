@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.epam.khodyka.commands.factories.AbstractFactory;
 import com.epam.khodyka.commands.factories.AddProductCommandFactory;
 import com.epam.khodyka.commands.factories.BuyAllCommandFactory;
 import com.epam.khodyka.commands.factories.ChangeLocaleCommandFactory;
@@ -18,7 +17,7 @@ import com.epam.khodyka.commands.factories.ShowHelpCommandFactory;
 import com.epam.khodyka.commands.factories.ShowNextOrderCommandFactory;
 import com.epam.khodyka.commands.factories.ShowOrderCommandFactory;
 import com.epam.khodyka.commands.factories.ShowProductsCommandFactory;
-import com.epam.khodyka.commands.implementation.NoCommand;
+import com.epam.khodyka.commands.impl.NoCommand;
 import com.epam.khodyka.service.ServiceManager;
 
 public class CommandFactory {

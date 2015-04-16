@@ -3,19 +3,19 @@ package com.epam.khodyka.view;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.epam.khodyka.view.implementation.ErrorPageView;
-import com.epam.khodyka.view.implementation.HelpView;
-import com.epam.khodyka.view.implementation.NoCommandView;
-import com.epam.khodyka.view.implementation.ShowAdvertisingView;
-import com.epam.khodyka.view.implementation.ShowBasketView;
-import com.epam.khodyka.view.implementation.ShowOrderView;
-import com.epam.khodyka.view.implementation.ShowProductView;
-import com.epam.khodyka.view.implementation.ShowTotalView;
-import com.epam.khodyka.view.implementation.SuccessfulAddedView;
-import com.epam.khodyka.view.implementation.SuccessfulChangedLocaleView;
-import com.epam.khodyka.view.implementation.SuccessfulCreateBuilderView;
-import com.epam.khodyka.view.implementation.SuccessfulCreateProductView;
-import com.epam.khodyka.view.implementation.SuccessfulOrderView;
+import com.epam.khodyka.view.impl.ErrorPageView;
+import com.epam.khodyka.view.impl.HelpView;
+import com.epam.khodyka.view.impl.NoCommandView;
+import com.epam.khodyka.view.impl.ShowAdvertisingView;
+import com.epam.khodyka.view.impl.ShowBasketView;
+import com.epam.khodyka.view.impl.ShowOrderView;
+import com.epam.khodyka.view.impl.ShowProductView;
+import com.epam.khodyka.view.impl.ShowTotalView;
+import com.epam.khodyka.view.impl.SuccessfulAddedView;
+import com.epam.khodyka.view.impl.SuccessfulChangedLocaleView;
+import com.epam.khodyka.view.impl.SuccessfulCreateBuilderView;
+import com.epam.khodyka.view.impl.SuccessfulCreateProductView;
+import com.epam.khodyka.view.impl.SuccessfulOrderView;
 
 public class ViewFactory {
 
