@@ -1,0 +1,33 @@
+.errorSpan {
+	display: none;
+	height: 20px;
+	width: 200px;
+	font-weight: bold;
+}
+
+.nameErrorSpan {
+	position: absolute;
+	left: 380px;
+	bottom: 150px;
+}
+
+.emailErrorSpan {
+	position: absolute;
+	left: 380px;
+	bottom: 100px;
+}
+
+.passwordErrorSpan {
+	position: absolute;
+	left: 380px;
+	bottom: 50px;
+}
+
+span.error {
+	display: block;
+	color: #F00;
+}
+
+.inputErrorBorder {
+	border: 1px solid red !important;
+}
