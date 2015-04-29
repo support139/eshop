@@ -1,7 +1,6 @@
 *.jar
 *.war
 *.ear
-
 *.class
 
 bin/
@@ -17,3 +16,17 @@ local.properties
 .settings
 
 .metadata/*
+
+.idea/
+*.iml
+*.iws
+*.class
+target/
+
+
+
+# eclipse specific git ignore
+.project
+.classpath
+.settings/
+target/
