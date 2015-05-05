@@ -1,12 +1,12 @@
 package com.epam.khodyka.captcha.impl;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import com.epam.khodyka.bean.Captcha;
 import com.epam.khodyka.captcha.AbstractMapCaptcha;
 import com.epam.khodyka.util.CookieUtil;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public class CookieCaptchaImpl extends AbstractMapCaptcha {
 
@@ -17,22 +17,10 @@ public class CookieCaptchaImpl extends AbstractMapCaptcha {
 		this.captchaExpiryTime = captchaExpiryTime;
 	}
 
-	// @Override
-	// public Captcha generateCaptcha(HttpServletRequest request,
-	// HttpServletResponse response) {
-	// Captcha captcha = super.createCaptcha(captchaExpiryTime);
-	// Cookie catpchaCookie = new Cookie("captcha", String.valueOf(captcha
-	// .getId()));
-	// System.out.println("gg");
-	// putCaptcha(captcha);
-	// response.addCookie(catpchaCookie);
-	// return captcha;
-	// }
-
 	@Override
 	public Captcha createCaptcha() {
 		return super.createCaptcha(captchaExpiryTime);
-	};
+	}
 	
 	@Override
 	public void saveCaptcha(Captcha captcha, HttpServletRequest request,

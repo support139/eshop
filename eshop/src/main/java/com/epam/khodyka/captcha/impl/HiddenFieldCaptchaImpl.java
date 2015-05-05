@@ -28,7 +28,7 @@ public class HiddenFieldCaptchaImpl extends AbstractMapCaptcha {
 	@Override
 	public Captcha createCaptcha() {
 		return super.createCaptcha(captchaExpiryTime);
-	};
+	}
 	
 	@Override
 	public void saveCaptcha(Captcha captcha, HttpServletRequest request,

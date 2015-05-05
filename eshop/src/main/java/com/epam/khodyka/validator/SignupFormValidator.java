@@ -1,19 +1,19 @@
 package com.epam.khodyka.validator;
 
 import com.epam.khodyka.bean.Input;
-import com.epam.khodyka.bean.SignupFormBean;
+import com.epam.khodyka.bean.SignupForm;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class SignupFormValidator implements Validator<SignupFormBean> {
+public class SignupFormValidator implements Validator<SignupForm> {
 
 	private static final String LOGIN_NAME_SURNAME_REGEXP = "[a-zA-Z0-9]+$";
 	private static final String PASSWORD_REGEXP = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,20}$";
 	private static final String EMAIL_REGEXP = "^([\\w-]+(?:\\.[\\w-]+)*)@((?:[\\w-]+\\.)*\\w[\\w-]{0,66})\\.([a-z]{2,6}(?:\\.[a-z]{2})?)$";
 
 	@Override
-	public boolean isValid(SignupFormBean object) {
+	public boolean isValid(SignupForm object) {
 		return isLoginValid(object.getLogin())
 				& isPasswordValid(object.getPassword())
 				& isNameValid(object.getName())

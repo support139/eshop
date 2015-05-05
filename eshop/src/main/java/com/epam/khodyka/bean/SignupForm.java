@@ -1,6 +1,6 @@
 package com.epam.khodyka.bean;
 
-public class SignupFormBean {
+public class SignupForm {
 
 	private Input login;
 	private Input password;
@@ -8,7 +8,7 @@ public class SignupFormBean {
 	private Input surname;
 	private Input email;
 
-	public SignupFormBean() {
+	public SignupForm() {
 		this.login = new StringInput();
 		this.password = new StringInput();
 		this.name = new StringInput();

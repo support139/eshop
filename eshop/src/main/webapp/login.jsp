@@ -37,9 +37,9 @@
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<form action="#" method="post">
-							<input type="text" placeholder="Login" name="name"/>
-							<input type="password" placeholder="Password"/>
+						<form action="Login" method="post">
+							<input type="text" placeholder="Login" name="login"/>
+							<input type="password" placeholder="Password" name="password"/>
 							<span>
 								<input type="checkbox" class="checkbox"> 
 								Keep me signed in
@@ -52,10 +52,10 @@
 					<h2 class="or">OR</h2>
 				</div>
 				<div class="col-sm-4">
-					
+
 					<div class="signup-form"><!--sign up form-->
 						<h2>New User Signup!</h2>
-						<form action="Signup" id="signUpForm" method="post">
+						<form action="Signup" id="signUpForm" method="post" enctype="multipart/form-data">
 							<input type="text" placeholder="Login" id="login" name="login" value="${formBean.login.value}"/>
 							<span id="loginRequired" class="errorSpan loginErrorSpan">Please enter login</span>
 							<span id="loginRegex" class="errorSpan loginErrorSpan">Invalid login</span>
@@ -65,7 +65,7 @@
 							<span id="passwordRequired" class="errorSpan passwordErrorSpan">Please enter password</span>
 							<span id="passwordRegex" class="errorSpan passwordErrorSpan">Invalid password</span>
 							<span id="passwordServer" class="errorSpan passwordErrorSpan showError">${formBean.password.errorMessage}</span>
-							
+
 							<input type="text" placeholder="Name" id="name" name="name" value="${formBean.name.value}"/>
 							<span id="nameRequired" class="errorSpan nameErrorSpan">Please enter name</span>
 							<span id="nameRegex" class="errorSpan nameErrorSpan">Invalid name</span>
@@ -80,7 +80,9 @@
 							<span id="emailRequired" class="errorSpan emailErrorSpan">Please enter email</span>
 							<span id="emailRegex" class="errorSpan emailErrorSpan">Invalid email</span>
 							<span id="emailServer" class="errorSpan emailErrorSpan showError">${formBean.email.errorMessage}</span>
-							
+
+							<input name="avatar" type="file">
+
 							<t:captcha/>
 									
 							<button type="submit" class="btn btn-default">Signup</button>

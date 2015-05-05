@@ -1,6 +1,7 @@
 package com.epam.khodyka.servlet;
 
-import java.io.IOException;
+import com.epam.khodyka.bean.Captcha;
+import com.epam.khodyka.captcha.CaptchaService;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -8,15 +9,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.epam.khodyka.bean.Captcha;
-import com.epam.khodyka.captcha.CaptchaService;
+import java.io.IOException;
 
 @WebServlet("/Captcha")
 public class CaptchaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	CaptchaService captchaService;
+	private CaptchaService captchaService;
 
 	@Override
 	public void init() throws ServletException {

@@ -249,7 +249,7 @@ a#scrollUp i{
 
 .mainmenu ul li a:hover, .mainmenu ul li a.active,  .shop-menu ul li a.active{
 	background:none;
-	color:#fdb45e;
+	color: #fdb45e;
 }
 
 .search_box input {
@@ -721,7 +721,8 @@ h2.title:before{
   padding: 5px 20px;
 }
 
-.category-products .panel-default .panel-heading .panel-title a {
+/* commented '<a>' tag in the end */
+.category-products .panel-default .panel-heading .panel-title {
   color: #696763;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
@@ -766,8 +767,8 @@ h2.title:before{
   padding-top: 15px;
 }
 
-
-.brands-name .nav-stacked li a {
+/* tag '<a>' has beed removed from the end */
+.brands-name .nav-stacked li {
   background-color: #FFFFFF;
   color: #696763;
   font-family: 'Roboto', sans-serif;
@@ -890,6 +891,7 @@ h2.title {
  position:relative;
 }
 
+/*
 .product-overlay {
   background:#FE980F;
   top: 0;
@@ -906,7 +908,6 @@ h2.title {
   display:block;
   height:100%;
 }
-
 
 .product-overlay .overlay-content {
   bottom: 0;
@@ -931,15 +932,13 @@ h2.title {
   color: #FE980F;
 }
 
-
 .product-overlay p{
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #fff;
 }
-
-
+*/
 
 .add-to-cart {
   background:#F5F5ED;
@@ -2519,5 +2518,28 @@ h2.title {
 .contact-info .social-networks ul li a:hover{
   color: #FE980F;
 }
+
+.price {
+background: #F0F0E9;
+  border: medium none;
+  color: #696763;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  height: 40px;
+  margin-bottom: 10px;
+  outline: medium none;
+  padding-left: 10px;
+  width: 100%;
+ }
+
+.btn-filter{
+  margin-left: 100px;
+}
+
+.
+
+
 
 

@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Captcha {
 
-	public final static int ONE_MINUTE = 1000 * 60;
+	private final static int ONE_MINUTE = 1000 * 60;
 
 	private int id;
 	private String token;

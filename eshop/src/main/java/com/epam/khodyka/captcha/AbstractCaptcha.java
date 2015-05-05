@@ -1,13 +1,12 @@
 package com.epam.khodyka.captcha;
 
-import java.io.IOException;
-import java.util.Date;
+import com.epam.khodyka.bean.Captcha;
+import com.github.cage.Cage;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.epam.khodyka.bean.Captcha;
-import com.github.cage.Cage;
+import java.io.IOException;
+import java.util.Date;
 
 public abstract class AbstractCaptcha implements CaptchaService {
 
@@ -20,8 +19,7 @@ public abstract class AbstractCaptcha implements CaptchaService {
 	public Captcha createCaptcha(int captchaExpiryTime) {
 		String token = cage.getTokenGenerator().next().substring(0, 5);
 		int id = token.hashCode();
-		Captcha captcha = new Captcha(id, token, captchaExpiryTime);
-		return captcha;
+		return new Captcha(id, token, captchaExpiryTime);
 	}
 
 	@Override
