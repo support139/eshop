@@ -15,6 +15,10 @@
 		<param-name>AvatarPath</param-name>
 		<param-value>/WEB-INF/userimg/</param-value>
 	</context-param>
+	<context-param>
+		<param-name>PicturePath</param-name>
+		<param-value>/images/products/</param-value>
+	</context-param>
 	<resource-ref>
 		<res-ref-name>jdbc/eshop</res-ref-name>
 		<res-type>javax.sql.DataSource</res-type>

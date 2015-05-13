@@ -1,6 +1,6 @@
 package com.epam.khodyka.servlet;
 
-import com.epam.khodyka.service.AvatarService;
+import com.epam.khodyka.service.PictureService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,16 +16,16 @@ import java.io.IOException;
 @WebServlet("/Avatar")
 public class AvatarServlet extends HttpServlet {
 
-    private AvatarService avatarService;
+    private PictureService pictureService;
 
     @Override
     public void init() throws ServletException {
         super.init();
-        this.avatarService = (AvatarService) getServletContext().getAttribute("AvatarService");
+        this.pictureService = (PictureService) getServletContext().getAttribute("PictureService");
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        avatarService.readAvatar(req, resp);
+        pictureService.printAvatar(req, resp);
     }
 }

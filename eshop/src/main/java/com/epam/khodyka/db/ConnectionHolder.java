@@ -8,18 +8,17 @@ import java.sql.Connection;
 public class ConnectionHolder {
 
     @SuppressWarnings("unchecked")
-    private static ThreadLocal<Connection> connectionHolder = new ThreadLocal(){
-        @Override
-        protected Object initialValue() {
-            return DbManager.getInstance().getConnection();
-        }
-    };
+    private ThreadLocal<Connection> connectionHolder = new ThreadLocal();
 
-    public static Connection getConnection() {
+    public void setConnection(Connection connection) {
+        connectionHolder.set(connection);
+    }
+
+    public Connection getConnection() {
         return connectionHolder.get();
     }
 
-    public static void removeConnection() {
+    public void removeConnection() {
         connectionHolder.remove();
     }
 

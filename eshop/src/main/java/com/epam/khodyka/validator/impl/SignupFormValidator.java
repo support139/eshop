@@ -1,7 +1,8 @@
-package com.epam.khodyka.validator;
+package com.epam.khodyka.validator.impl;
 
 import com.epam.khodyka.bean.Input;
 import com.epam.khodyka.bean.SignupForm;
+import com.epam.khodyka.validator.Validator;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

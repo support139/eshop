@@ -2,6 +2,7 @@ package com.epam.khodyka.validator;
 
 import com.epam.khodyka.bean.Input;
 import com.epam.khodyka.bean.StringInput;
+import com.epam.khodyka.validator.impl.SignupFormValidator;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertTrue;

@@ -10,15 +10,19 @@ import java.sql.Connection;
 public class TransactionManager<T> implements InvocationHandler {
 
     private T service;
+    private DbManager dbManager;
+    private ConnectionHolder connectionHolder;
 
-
-    public TransactionManager(T service) {
+    public TransactionManager(T service, DbManager dbManager, ConnectionHolder connectionHolder) {
         this.service = service;
+        this.dbManager = dbManager;
+        this.connectionHolder = connectionHolder;
     }
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        Connection con = ConnectionHolder.getConnection();
+        Connection con = dbManager.getConnection();
+        connectionHolder.setConnection(con);
         Object result = null;
         try {
             result = method.invoke(service, args);
@@ -27,7 +31,7 @@ public class TransactionManager<T> implements InvocationHandler {
             con.rollback();
         } finally {
             con.close();
-            ConnectionHolder.removeConnection();
+            connectionHolder.removeConnection();
         }
         return result;
     }

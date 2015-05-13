@@ -5,9 +5,12 @@ import com.epam.khodyka.bean.SignupForm;
 import com.epam.khodyka.captcha.CaptchaService;
 import com.epam.khodyka.db.Fields;
 import com.epam.khodyka.db.exception.UserAlreadyExistException;
-import com.epam.khodyka.service.AvatarService;
+import com.epam.khodyka.requestextractor.Extractor;
+import com.epam.khodyka.requestextractor.impl.SignupFormExtractor;
+import com.epam.khodyka.service.PictureService;
 import com.epam.khodyka.service.UserService;
-import com.epam.khodyka.validator.SignupFormValidator;
+import com.epam.khodyka.service.exception.UnsupportPictureFormatException;
+import com.epam.khodyka.validator.impl.SignupFormValidator;
 import com.epam.khodyka.validator.Validator;
 import org.apache.log4j.Logger;
 
@@ -30,8 +33,9 @@ public class SignupServlet extends HttpServlet {
 
     private CaptchaService captchaService;
     private UserService userService;
-    private AvatarService avatarService;
-    private Validator<SignupForm> validator;
+    private PictureService pictureService;
+    private Extractor<SignupForm> signupFormExtractor;
+    private Validator<SignupForm> signupFormValidator;
 
     @Override
     public void init() throws ServletException {
@@ -40,8 +44,9 @@ public class SignupServlet extends HttpServlet {
                 .getAttribute("CaptchaService");
         this.userService = (UserService) getServletContext().getAttribute(
                 "UserService");
-        this.avatarService = (AvatarService) getServletContext().getAttribute("AvatarService");
-        this.validator = new SignupFormValidator();
+        this.pictureService = (PictureService) getServletContext().getAttribute("PictureService");
+        this.signupFormExtractor = new SignupFormExtractor();
+        this.signupFormValidator = new SignupFormValidator();
     }
 
     @Override
@@ -51,8 +56,8 @@ public class SignupServlet extends HttpServlet {
                 .getAttribute("CaptchaService");
         this.userService = (UserService) config.getServletContext()
                 .getAttribute("UserService");
-        this.avatarService = (AvatarService) config.getServletContext().getAttribute("AvatarService");
-        this.validator = (Validator<SignupForm>) config.getServletContext()
+        this.pictureService = (PictureService) config.getServletContext().getAttribute("PictureService");
+        this.signupFormValidator = (Validator<SignupForm>) config.getServletContext()
                 .getAttribute("SignupFormValidator");
     }
 
@@ -71,14 +76,9 @@ public class SignupServlet extends HttpServlet {
 
     public void doPost(HttpServletRequest request,
                        HttpServletResponse response) throws ServletException, IOException {
-        SignupForm formBean = new SignupForm();
-        formBean.setLogin(request.getParameter(Fields.USER_LOGIN));
-        formBean.setPassword(request.getParameter(Fields.USER_PASSWORD));
-        formBean.setName(request.getParameter(Fields.USER_NAME));
-        formBean.setSurname(request.getParameter(Fields.USER_SURNAME));
-        formBean.setEmail(request.getParameter(Fields.USER_EMAIL));
+        SignupForm formBean = signupFormExtractor.extract(request);
 
-        if (!validator.isValid(formBean)) {
+        if (!signupFormValidator.isValid(formBean)) {
             LOG.warn("Form data is not valid. Redirect to sign up page");
             redirectToSignUpPage(request, response, formBean);
             return;
@@ -96,10 +96,15 @@ public class SignupServlet extends HttpServlet {
             redirectToSignUpPage(request, response, formBean);
             return;
         }
-        avatarService.writeAvatar(request);
+        try {
+            pictureService.saveAvatar(request);
+        } catch (UnsupportPictureFormatException e) {
+            LOG.warn("Unsupport picture format has been used", e);
+            redirectToSignUpPage(request, response, formBean);
+            return;
+        }
         LOG.info("User has been created. Redirect to sign up page");
         response.sendRedirect(Path.SIGN_UP_SERVLET);
-
     }
 
     private void redirectToSignUpPage(HttpServletRequest request,

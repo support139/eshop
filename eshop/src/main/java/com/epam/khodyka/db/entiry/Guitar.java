@@ -11,6 +11,7 @@ public class Guitar {
     private double scale;
     private String neck;
     private String fingerboard;
+    private String picture;
     private Manufacturer manufacturer;
     private Category category;
 
@@ -70,6 +71,14 @@ public class Guitar {
         this.fingerboard = fingerboard;
     }
 
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
+
     public Manufacturer getManufacturer() {
         return manufacturer;
     }
@@ -84,5 +93,21 @@ public class Guitar {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    @Override
+    public String toString() {
+        return "Guitar{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", body='" + body + '\'' +
+                ", scale=" + scale +
+                ", neck='" + neck + '\'' +
+                ", fingerboard='" + fingerboard + '\'' +
+                ", picture='" + picture + '\'' +
+                ", manufacturer=" + manufacturer +
+                ", category=" + category +
+                '}';
     }
 }

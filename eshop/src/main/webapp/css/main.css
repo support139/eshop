@@ -2538,8 +2538,30 @@ background: #F0F0E9;
   margin-left: 100px;
 }
 
-.
+.login-header-form form input{
+  background: #F0F0E9;
+  border: medium none;
+  color: #696763;
+  /*display: block;*/
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  height: 30px;
+  margin-bottom: 10px;
+  outline: medium none;
+  padding-left: 10px;
+  /*width: 100%;*/
+}
 
 
-
+.login-header-form button {
+  background: #FE980F;
+  border: medium none;
+  border-radius: 0;
+  color: #FFFFFF;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  padding: 6px 25px;
+  margin-left: 76%;
+}
 

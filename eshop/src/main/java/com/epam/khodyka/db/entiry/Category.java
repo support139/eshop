@@ -5,7 +5,7 @@ package com.epam.khodyka.db.entiry;
  */
 public class Category {
     private int id;
-    private String Category;
+    private String category;
 
     public int getId() {
         return id;
@@ -16,10 +16,10 @@ public class Category {
     }
 
     public String getCategory() {
-        return Category;
+        return category;
     }
 
     public void setCategory(String category) {
-        Category = category;
+        this.category = category;
     }
 }

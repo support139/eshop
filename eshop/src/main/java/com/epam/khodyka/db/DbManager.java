@@ -16,21 +16,6 @@ import java.sql.Statement;
 public class DbManager {
 
     private static final Logger LOG = Logger.getLogger(DbManager.class);
-    private static volatile DbManager manager;
-
-    private DbManager() {
-    }
-
-    public static DbManager getInstance() {
-        if (manager == null) {
-            synchronized (DbManager.class) {
-                if (manager == null) {
-                    manager = new DbManager();
-                }
-            }
-        }
-        return manager;
-    }
 
     public Connection getConnection() {
         Connection con = null;
@@ -41,7 +26,6 @@ public class DbManager {
         }
         return con;
     }
-
 
     private DataSource getDataSource() {
         DataSource ds = null;
