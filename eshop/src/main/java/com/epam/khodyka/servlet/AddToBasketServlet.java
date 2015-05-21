@@ -1,11 +1,9 @@
 package com.epam.khodyka.servlet;
 
 import com.epam.khodyka.bean.Basket;
-import com.epam.khodyka.bean.OrderItem;
 import com.epam.khodyka.db.entiry.Guitar;
 import com.epam.khodyka.service.ProductService;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONValue;
+import org.json.simple.JSONObject;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,8 +16,8 @@ import java.io.IOException;
 /**
  * Created by Gofmiller on 17.05.2015.
  */
-@WebServlet("/Buy")
-public class BuyServlet extends HttpServlet {
+@WebServlet("/AddToBasket")
+public class AddToBasketServlet extends HttpServlet {
 
     private ProductService productService;
 
@@ -30,29 +28,17 @@ public class BuyServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("id");
-        int intId = Integer.parseInt(id);
-
-        Guitar guitar = productService.getProductById(intId);
-        System.out.println(guitar);
+        int productId = Integer.parseInt(request.getParameter("id"));
+        Guitar guitar = productService.getProductById(productId);
 
         HttpSession session = request.getSession();
         Basket basket = (Basket) session.getAttribute("basket");
-        if (basket != null) {
-            basket.add(guitar);
-        } else {
-            basket = new Basket();
-            basket.add(guitar);
-        }
+        basket.add(guitar);
         session.setAttribute("basket", basket);
+        session.setAttribute("quantity", basket.getQuantity());
 
-        JSONArray jsonArray = new JSONArray();
-        jsonArray.add(id);
-        jsonArray.writeJSONString(response.getWriter());
-
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("quantity", basket.getQuantity());
+        jsonObject.writeJSONString(response.getWriter());
     }
 }

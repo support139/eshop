@@ -38,8 +38,8 @@ public class MySqlUserRepository implements UserRepository {
     }
 
     @Override
-    public void add(User user) throws SQLRuntimeException {
-        jdbcTemplate.add(ADD_USER, new Object[]{user.getName(), user.getSurname(), user.getLogin(),
+    public int add(User user) throws SQLRuntimeException {
+        return jdbcTemplate.add(ADD_USER, new Object[]{user.getName(), user.getSurname(), user.getLogin(),
                 user.getPassword(), user.getEmail(), user.getAvatar()});
     }
 }

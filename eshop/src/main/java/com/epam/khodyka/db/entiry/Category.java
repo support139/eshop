@@ -22,4 +22,31 @@ public class Category {
     public void setCategory(String category) {
         this.category = category;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Category category1 = (Category) o;
+
+        if (id != category1.id) return false;
+        return !(category != null ? !category.equals(category1.category) : category1.category != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + (category != null ? category.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", category='" + category + '\'' +
+                '}';
+    }
 }

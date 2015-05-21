@@ -10,6 +10,6 @@ public interface UserRepository {
 
 	User get(String login);
 	
-	void add(User user);
+	int add(User user);
 
 }

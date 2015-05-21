@@ -126,23 +126,31 @@ public class JdbcTemplate<E> {
         return object;
     }
 
-    public void add(String sql, Object[] args) {
+    public int add(String sql, Object[] args) {
         Connection connection = connectionHolder.getConnection();
         PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        int generatedId = 0;
         try {
-            statement = connection.prepareStatement(sql);
+            statement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
             for (int i = 0; i < args.length; i++) {
-                statement.setObject(i+1, args[i]);
+                statement.setObject(i + 1, args[i]);
             }
             statement.executeUpdate();
+            resultSet = statement.getGeneratedKeys();
+            if (resultSet.next()) {
+                generatedId = resultSet.getInt(1);
+            }
         } catch (SQLException e) {
             LOG.error("Cannot add new object!", e);
             SQLRuntimeException sqlRuntimeException = new SQLRuntimeException();
             sqlRuntimeException.initCause(e);
             throw sqlRuntimeException;
         } finally {
+            dbManager.closeResultSet(resultSet);
             dbManager.closeStatement(statement);
         }
+        return generatedId;
     }
 
     public int getProductCountByCriteria(Criteria criteria) {

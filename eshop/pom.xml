@@ -100,6 +100,27 @@
                     <uriEncoding>UTF-8</uriEncoding>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
+
+    <properties>
+        <sonar.login>user</sonar.login>
+        <sonar.password>jKwEuf1tofp0&lt;Zx</sonar.password>
+        <sonar.jdbc.url>jdbc:mysql://epuakhaw0552:3306/sonar_preprod?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;useConfigs=maxPerformance</sonar.jdbc.url>
+        <sonar.jdbc.username>sonar</sonar.jdbc.username>
+        <sonar.jdbc.password>&gt;6wPiV&gt;Lasv}[Pg</sonar.jdbc.password>
+        <sonar.host.url>http://epuakhaw0552:9000</sonar.host.url>
+    </properties>
+
 </project>
+
+

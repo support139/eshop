@@ -11,9 +11,35 @@ public class OrderItem {
     private int amount;
     private double price;
 
+    public OrderItem() {
+
+    }
+
     public OrderItem(Guitar guitar, int amount, double price) {
         this.guitar = guitar;
         this.amount = amount;
         this.price = price;
+    }
+
+    public Guitar getGuitar() {
+        return guitar;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+
+    @Override
+    public String toString() {
+        return "OrderItem{" +
+                "guitar=" + guitar +
+                ", amount=" + amount +
+                ", price=" + price +
+                '}';
     }
 }

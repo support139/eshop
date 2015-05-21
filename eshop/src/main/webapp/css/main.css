@@ -1898,10 +1898,10 @@ h2.title {
 }
 
 
-.shopper-info > form > input, 
-.form-two > form > select, 
-.form-two > form > input, 
-.form-one > form > input {
+form .shopper-info  > input,
+form .form-two  > select,
+form .form-two  > input,
+form .form-one  > input {
   background:#F0F0E9;
   border: 0 none;
   margin-bottom:10px;
@@ -2564,4 +2564,38 @@ background: #F0F0E9;
   padding: 6px 25px;
   margin-left: 76%;
 }
+
+.product-quantity {
+background: #F0F0E9;
+  border: medium none;
+  color: #696763;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  height: 40px;
+  margin-bottom: 10px;
+  outline: medium none;
+  padding-left: 10px;
+  width: 40%;
+}
+
+#cardId{
+  display: none;
+}
+
+
+.mylabel {
+  border: medium none;
+  display: inline-block;
+  height: 0;
+  margin-bottom: 0;
+  outline: medium none;
+  padding-left: 0;
+}
+
+
+
+
+
 

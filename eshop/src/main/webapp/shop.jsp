@@ -1,6 +1,7 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html lang="en" xmlns:t="http://www.w3.org/1999/html">
@@ -107,9 +108,9 @@
 
                                                 <p>${guitar.name}</p>
                                                     <%--<div id="backetDiv"></div>--%>
-                                                <button type="button" onclick="sendAjax(${guitar.id})"
+                                                <button type="button" onclick="buyAjaxRequest(${guitar.id})"
                                                         class="btn btn-default add-to-cart">
-                                                    <i class="fa fa-shopping-cart"></i>Add to cart
+                                                    <i class="fa fa-shopping-cart"></i><f:message key="add"/>
                                                 </button>
                                                     <%--<a href="#" class="btn btn-default add-to-cart"><i
                                                     class="fa fa-shopping-cart"></i>Add to cart</a>--%>

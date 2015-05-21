@@ -1,6 +1,6 @@
 /*price range*/
 
-$('#sl2').slider();
+//$('#sl2').slider();
 
 var RGBChange = function () {
     $('#RGB').css('background', 'rgb(' + r.getValue() + ',' + g.getValue() + ',' + b.getValue() + ')')
@@ -27,17 +27,86 @@ $(document).ready(function () {
             zIndex: 2147483647 // Z-Index for the overlay
         });
     });
+
+    $("#cardPayment").click(function(){
+        $("#cardId").slideDown("fast");
+    });
+    $("#paypalPayment").click(function(){
+            $("#cardId").slideUp("fast");
+    });
+    $("#bankPayment").click(function(){
+                $("#cardId").slideUp("fast");
+        });
+
+
+
 });
 
-function sendAjax(guitarId){
+function buyAjaxRequest(guitarId) {
     $.ajax({
-        url: "Buy",
+        url: "AddToBasket",
         type: "POST",
-        dataType: "json",
-        data: { id: guitarId },
-        success: function(){
-            //alert("ggg");
-            $.parseJSON()
+        data: {
+            id : guitarId
+        },
+        success: function (response) {
+            var value = JSON.parse(response);
+            $("#cart").text('(' + value.quantity + ')');
         }
     });
 }
+
+function quantityAjaxRequest(orderItemId, quantity) {
+    $.ajax({
+        url: "ChangeQuantity",
+        type: "POST",
+        data: {
+            orderItemId : orderItemId,
+            quantity : quantity
+        },
+        success: function (response) {
+            var currentRow = $("#" + orderItemId);
+            var orderPrice = parseInt(currentRow.find("td.cart_price").text());
+            var currentQuantity = currentRow.find("td.cart_quantity").find("input").val();
+            var totalOrderPriceCell = $(currentRow.find("td.cart_total").text(orderPrice * currentQuantity));
+            updateBottomOrderRow();
+        }
+    });
+}
+
+function deleteOrderItemRequest(orderItemId){
+    $.ajax({
+        url: "RemoveOrderItem",
+        type: "POST",
+        data: {
+            orderItemId : orderItemId
+        },
+        success: function(response){
+            $("#" + orderItemId).remove();
+            updateBottomOrderRow();
+        }
+    })
+
+}
+
+function updateBottomOrderRow(){
+    var totalPrice = 0;
+    var totalQuantity = 0;
+    $("table.table").find("td.cart_total").each(function(){
+        totalPrice += parseInt($(this).text());
+    });
+    $("table.table").find("td.cart_quantity").find("input").each(function(){
+        totalQuantity += parseInt($(this).val());
+    });
+    $("#quantity").text("Quantity: " + totalQuantity);
+    $("#total").text("Total: " + totalPrice + "$");
+}
+
+
+
+
+
+
+
+
+

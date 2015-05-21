@@ -2,16 +2,17 @@ package com.epam.khodyka.bean;
 
 import com.epam.khodyka.db.entiry.Guitar;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by Andrii_Khodyka on 5/15/2015.
  */
 public class Basket {
-    private Map<Guitar, Integer> basket = new HashMap<>();
+    private Map<Guitar, Integer> basket = new ConcurrentHashMap();
 
     public void add(Guitar guitar) {
+
         Integer amountOfCurrentGuitar = basket.get(guitar);
         if (amountOfCurrentGuitar == null) {
             basket.put(guitar, 1);
@@ -28,12 +29,12 @@ public class Basket {
         return basket;
     }
 
-    public int getTotalAmount() {
-        int totalAmount = 0;
+    public int getQuantity() {
+        int quantity = 0;
         for (Map.Entry<Guitar, Integer> entry : basket.entrySet()) {
-            totalAmount += entry.getValue();
+            quantity += entry.getValue();
         }
-        return totalAmount;
+        return quantity;
     }
 
     public double getTotalPrice() {
@@ -43,6 +44,28 @@ public class Basket {
         }
         return totalPrice;
     }
+
+    public void clearBasket(){
+        basket.clear();
+    }
+
+    public void changeItemQuantity(int orderItemId, int newQuantity){
+        for (Map.Entry<Guitar, Integer> entry : basket.entrySet()) {
+            if (entry.getKey().getId() == orderItemId) {
+                basket.put(entry.getKey(), newQuantity);
+            }
+        }
+    }
+
+    public void removeOrderItem(int orderItemId){
+        for (Map.Entry<Guitar, Integer> entry : basket.entrySet()) {
+            if (entry.getKey().getId() == orderItemId) {
+                basket.remove(entry.getKey());
+            }
+        }
+    }
+
+
 
 
 }

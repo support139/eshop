@@ -1,7 +1,5 @@
 package com.epam.khodyka.bean;
 
-import com.epam.khodyka.db.entiry.OrderStatus;
-
 import java.util.Date;
 import java.util.List;
 
@@ -9,22 +7,23 @@ import java.util.List;
  * Created by Andrii_Khodyka on 5/15/2015.
  */
 public class Order {
+
     private int id;
     private OrderStatus status;
     private String statusDetail;
     private Date orderDate;
-    private OrderUser user;
+    private ShopperBean shopperBean;
     private List<OrderItem> itemList;
 
     public Order() {
     }
 
-    public Order(int id, OrderStatus status, String statusDetail, Date orderDate, OrderUser user, List<OrderItem> itemList) {
+    public Order(int id, OrderStatus status, String statusDetail, Date orderDate, ShopperBean shopperBean, List<OrderItem> itemList) {
         this.id = id;
         this.status = status;
         this.statusDetail = statusDetail;
         this.orderDate = orderDate;
-        this.user = user;
+        this.shopperBean = shopperBean;
         this.itemList = itemList;
     }
 
@@ -60,12 +59,12 @@ public class Order {
         this.orderDate = orderDate;
     }
 
-    public OrderUser getUser() {
-        return user;
+    public ShopperBean getShopperBean() {
+        return shopperBean;
     }
 
-    public void setUser(OrderUser user) {
-        this.user = user;
+    public void setShopperBean(ShopperBean shopperBean) {
+        this.shopperBean = shopperBean;
     }
 
     public List<OrderItem> getItemList() {
@@ -74,5 +73,17 @@ public class Order {
 
     public void setItemList(List<OrderItem> itemList) {
         this.itemList = itemList;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", status=" + status +
+                ", statusDetail='" + statusDetail + '\'' +
+                ", orderDate=" + orderDate +
+                ", shopperBean=" + shopperBean +
+                ", itemList=" + itemList +
+                '}';
     }
 }

@@ -1,8 +1,12 @@
 package com.epam.khodyka.servlet;
 
+import com.epam.khodyka.Path;
+import com.epam.khodyka.bean.Basket;
 import com.epam.khodyka.bean.LoginForm;
 import com.epam.khodyka.db.Fields;
 import com.epam.khodyka.db.entiry.User;
+import com.epam.khodyka.requestextractor.Extractor;
+import com.epam.khodyka.requestextractor.impl.LoginFormExtractor;
 import com.epam.khodyka.service.UserService;
 
 import javax.servlet.ServletException;
@@ -19,11 +23,13 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
 
     private UserService userService;
+    private Extractor<LoginForm> loginFormExtractor;
 
     @Override
     public void init() throws ServletException {
         super.init();
         this.userService = (UserService) getServletContext().getAttribute("UserService");
+        this.loginFormExtractor = new LoginFormExtractor();
     }
 
     @Override
@@ -33,15 +39,16 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        LoginForm loginForm = new LoginForm();
-        loginForm.setLogin(req.getParameter(Fields.USER_LOGIN));
-        loginForm.setPassword(req.getParameter(Fields.USER_PASSWORD));
+        LoginForm loginForm = loginFormExtractor.extract(req);
         User user = userService.login(loginForm);
         if (user != null) {
+            Basket basket = new Basket();
+            req.getSession().setAttribute("basket", basket);
+            req.getSession().setAttribute("quantity", basket.getQuantity());
             req.getSession().setAttribute("CURRENT_USER", user);
-            resp.sendRedirect("login.jsp");
+            resp.sendRedirect(Path.SHOP_SERVLET);
             return;
         }
-        resp.sendRedirect("Signup");
+        resp.sendRedirect(Path.LOGIN_PAGE);
     }
 }
